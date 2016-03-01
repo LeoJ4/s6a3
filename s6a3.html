@@ -1,0 +1,63 @@
+<html>
+<head>
+	<title>
+	S6A1
+	</title>
+	<script type="text/javascript">
+
+  function findMaxSequence(elem)
+  {
+    var i,array,start=0,len=0,temp_start=0,temp_len=0;
+    array = elem;
+    for(i=0;i<array.length;i++)
+    {
+      if(array[i]>array[i-1])
+      {
+        temp_len++;
+      }
+      else
+      {
+      temp_start = i;
+      temp_len = 0;
+      }
+    
+     if(temp_len>len)
+     {
+        len = temp_len;
+        start=temp_start;
+     }
+    
+    }
+
+       for(i=start;i<=start+len;i++)
+    {
+      if(start===start+len)
+        {
+        console.log('No');
+          continue;
+        }
+      else
+      if(i==start)
+      console.log('[');
+      console.log(array[i]+',');
+      if(i===start+len)
+      {
+        console.log(']'+'\n\n');
+      }
+    }
+}
+
+ 
+
+findMaxSequence([2,3,4,8,4,9,1]);
+findMaxSequence([3,5,4,6,1,2,3,6,10,32]);
+findMaxSequence([3,2,1]);
+
+	</script>
+
+</head>
+<body>
+</body>
+</html>
+
+
